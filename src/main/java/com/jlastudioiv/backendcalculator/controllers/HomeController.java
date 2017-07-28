@@ -19,9 +19,13 @@ public class HomeController {
         System.out.println(numTwo);
         System.out.println(operand);
 
-        double result = MyMathComputation.compute(numOne, numTwo, operand);
+        MyMathComputation myMathComputation = new MyMathComputation();
+
+        double result = myMathComputation.compute(numOne, numTwo, operand);
+        String equation = myMathComputation.printEquation();
 
         model.addAttribute("result", result);
+        model.addAttribute("equation", equation);
 
         return "index";
     }
